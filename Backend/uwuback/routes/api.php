@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/contacto',[ContactoController::class, 'index']);
+Route::get('/contactos',[ContactoController::class, 'index']);
 Route::post('/contacto',[ContactoController::class,'store']);
