@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/contactos',[ContactoController::class, 'index']);
 Route::post('/contacto',[ContactoController::class,'store']);
+Route::delete('/contacto/{paciente_id}',[ContactoController::class,'destroy']);
+Route::get('/contacto/{paciente}',[ContactoController::class,'show']);
+//Route::update();
