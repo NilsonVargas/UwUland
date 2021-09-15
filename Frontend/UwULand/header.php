@@ -26,7 +26,7 @@
             <a class="nav-link">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Contacto</a>
+            <a href="contacto.php" class="nav-link">Contacto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link">Destacados</a>
@@ -40,9 +40,6 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline waves-effect waves-light">
-          <input class="form-control" type="text" placeholder="Buscar">
-        </form>
       </div>
     </div>
   </nav>
