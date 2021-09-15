@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contacto;
+use App\Http\Resources\ContactoResource;
 
 class ContactoController extends Controller
 {
@@ -15,7 +16,7 @@ class ContactoController extends Controller
     public function index()
     {
         //
-        return Contacto::all();
+        return ContactoResource::collection(Contacto::all());
     }
 
     /**
@@ -26,13 +27,15 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        $solicitud_contacto = new Contacto;
-        $solicitud_contacto->primer_nombre = $request->primer_nombre;
-        $solicitud_contacto->primer_apellido = $request->primer_apellido;
-        $solicitud_contacto->correo_electronico = $request->correo_electronico;
-        $solicitud_contacto->asunto = $request->asunto;
-        $solicitud_contacto->mensaje = $request->mensaje;        
-        $solicitud_contacto->save();
+        
+        //$solicitud_contacto = new Contacto;
+        //$solicitud_contacto->primer_nombre = $request->primer_nombre;
+        //$solicitud_contacto->primer_apellido = $request->primer_apellido;
+        //$solicitud_contacto->correo_electronico = $request->correo_electronico;
+        //$solicitud_contacto->asunto = $request->asunto;
+        //$solicitud_contacto->mensaje = $request->mensaje;        
+        //$solicitud_contacto->save();
+        return new ContactoResource(Contacto::create($request->all()));
     }
 
     /**
