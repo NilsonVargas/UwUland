@@ -27,13 +27,13 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         //$solicitud_contacto = new Contacto;
         //$solicitud_contacto->primer_nombre = $request->primer_nombre;
         //$solicitud_contacto->primer_apellido = $request->primer_apellido;
         //$solicitud_contacto->correo_electronico = $request->correo_electronico;
         //$solicitud_contacto->asunto = $request->asunto;
-        //$solicitud_contacto->mensaje = $request->mensaje;        
+        //$solicitud_contacto->mensaje = $request->mensaje;
         //$solicitud_contacto->save();
         return new ContactoResource(Contacto::create($request->all()));
     }
@@ -44,9 +44,13 @@ class ContactoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function show($id)
     {
-        //
+
+
     }
 
     /**
@@ -59,6 +63,13 @@ class ContactoController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+
+
+
+
+
+
     }
 
     /**
@@ -69,6 +80,8 @@ class ContactoController extends Controller
      */
     public function destroy($contacto_id)
     {
+
+
         //
         $contacto = Contacto::find($contacto_id);
         $contacto->delete();

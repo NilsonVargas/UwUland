@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContactoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/* Route::get('/', ContactoController::class) //Sólo ando probando los controladores gg no me peguen
+{
+    public function __invoke(){
+        return "Página de prueba";
+    }
+
+
+}); */
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
