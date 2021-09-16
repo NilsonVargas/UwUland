@@ -7,7 +7,7 @@ let raw = {"primer_nombre": "",
 "correo_electronico": "",
 "asunto": "",
 "mensaje": ""}
-
+let data
 
 let formulario = document.forms['solicitud'];
 
@@ -39,8 +39,17 @@ formulario.addEventListener('submit', function (e) {
 function realizar_solicitud_contacto(requestOptions)
 {
     fetch("http://127.0.0.1:8000/api/contacto", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-    alert("Intento de registro realizado");
+    .then(response => response.json)
+    .then(result => data = result)
+    .catch(solicitud_erronea());
+}
+
+function solicitud_exitosa()
+{
+  alert("Su solicitud se envio con exito, se le contactara al correo");
+}
+
+function solicitud_erronea()
+{
+  alert("Error al enviar la solicitud de contacto, no se recibio respuesta.");
 }
