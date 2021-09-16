@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contacto;
 use App\Http\Resources\ContactoResource;
+use App\Http\Requests\ActualizarContactoRequest;
 
 class ContactoController extends Controller
 {
@@ -60,15 +61,12 @@ class ContactoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $contacto)
     {
-        //
-
-
-
-
-
-
+        //print_r($request->all());
+        $contactoTemp = Contacto::find($contacto);
+        $contactoTemp->update($request->all());
+        return $contactoTemp;
 
     }
 

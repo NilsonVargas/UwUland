@@ -25,6 +25,8 @@ Route::post('/contacto',[ContactoController::class,'store']);
 
 Route::delete('/contacto/{paciente_id}',[ContactoController::class,'destroy']);
 
+Route::put('/contacto/{paciente_id}',[ContactoController::class,'update']);
+
 Route::get('/contacto/{paciente}',[ContactoController::class,'show']);
 
 
